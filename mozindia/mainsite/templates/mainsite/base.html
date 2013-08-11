@@ -5,10 +5,11 @@
     <title>{% block page_title %}Mozilla India{% endblock %}</title>
 
     {% block site_css %}
+      <link href="//mozorg.cdn.mozilla.net/media/css/tabzilla-min.css" rel="stylesheet" />
+      <link href="{{ static('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
       {% compress css %}
       <link href="{{ static('mainsite/css/main.css') }}" rel="stylesheet">
       {% endcompress %}
-      <link href="//mozorg.cdn.mozilla.net/media/css/tabzilla-min.css" rel="stylesheet" />
     {% endblock %}
   </head>
   <body data-mobile-cookie="{{ settings.MOBILE_COOKIE }}">
@@ -33,6 +34,7 @@
           <script src="{{ static('mainsite/js/init.js') }}"></script>
           {% endcompress %}
           <script src="//mozorg.cdn.mozilla.net/tabzilla/tabzilla.js"></script>
+          <script src="{{ static('bootstrap/js/bootstrap.min.js') }}"></script>
         {% endblock %}
         </div>
     </div>
