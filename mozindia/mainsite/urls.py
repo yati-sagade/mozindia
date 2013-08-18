@@ -1,3 +1,4 @@
+# -.- encoding: utf8 -.-
 from django.conf.urls.defaults import *
 from django.views.generic.simple import direct_to_template
 from .helpers.download_buttons import download_firefox
@@ -10,7 +11,10 @@ urlpatterns = patterns('',
         {
             'template': 'mainsite/home.html',
             'extra_context': {
-                'download_firefox': lambda: download_firefox,
+                'languages': (
+                    ('hi-IN',u'हिंदी', u'मुफ्त डाउनलोड करें'),
+                    ('en-US', 'English (US)', 'Free Download'),
+                ),
             },
         },
         name='mainsite.home'),
