@@ -1,26 +1,50 @@
 {% extends "mainsite/base.html" %}
 
 {% block content %}
+<hgroup id="mainhead">
+<h2><img src="{{ static('mainsite/images/mozilla_wordmark.png') }}"
+    alt="Mozilla" width="400" height="160"
+    class="img-responsive"/><span>India</span></h2>
+</hgroup>
 <article class="container">
     <section id="navigation" class="container">
         <div class="navbar">
             <ul class="nav nav-tabs">
               <li class="active"><a href="/">Home</a></li>
               <li><a href="http://www.mozilla.org/en-US/mission/">Mission</a></li>
-              <li><a href="#">News</a></li>
+              <li><a href="#">Blog</a></li>
               <li><a href="#">About</a></li>
               <li><a href="#">Get Involved</a></li>
             </ul>
         </div>
-    </section
+    </section>
 </article>
 
-<hgroup id="mainhead">
-<h2><img src="{{ static('mainsite/images/mozilla_wordmark.png') }}"
-    alt="Mozilla" width="400" height="160"
-    class="img-responsive"/><span>India</span></h2>
-</hgroup>
+<article id="mozindia-promo" class="carousel slide">
+    <ol class="carousel-indicators">
+        <li data-target="#mozindia-promo" data-slide-to="0" class="active"></li>
+        <li data-target="#mozindia-promo" data-slide-to="1"></li>
+        <li data-target="#mozindia-promo" data-slide-to="2"></li>
+    </ol>
+    <!-- carousel items -->
+    <section class="carousel-inner">
+        <div class="active item"><img src="{{ static('mainsite/images/abstract-1-1000x250.jpg') }}" width="1000" height="250"/></div>
+        <div class="item"><img src="{{ static('mainsite/images/abstract-2-1000x250.jpg') }}" width="1000" height="250"/></div>
+        <div class="item"><img src="{{ static('mainsite/images/abstract-3-1000x250.jpg') }}" width="1000" height="250"/></div>
+    </section>
+    <!-- carousel navigation -->
+    <a class="carousel-control left" href="#mozindia-promo" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#mozindia-promo" data-slide="next">&rsaquo;</a>
+</article>
 
-{# {{ download_firefox(small=True, icon=False) }} #}
+<article id="mozindia-news" class="row-fluid">
+    <span class="span12"><h3>News</h3></span>
+</article>
+{% endblock %}
 
+{% block site_js %}
+{{ super() }}
+<script src="{{ static('mainsite/js/platform.js') }}"></script>
+<script>
+    $('.carousel').carousel();
 {% endblock %}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html LANG="en">
+<html LANG="en" class="windows no-js">
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
     <title>{% block page_title %}Mozilla India{% endblock %}</title>
@@ -8,7 +8,9 @@
       <link href="//mozorg.cdn.mozilla.net/media/css/tabzilla-min.css" rel="stylesheet" />
       <link href="{{ static('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
       {% compress css %}
-      <link href="{{ static('mainsite/css/main.css') }}" rel="stylesheet">
+      <link href="{{ static('mainsite/css/responsive.css') }}" rel="stylesheet">
+      <link href="{{ static('mainsite/css/home.css') }}" rel="stylesheet" />
+      <link href="{{ static('mainsite/css/main.css') }}" rel="stylesheet" />
       {% endcompress %}
     {% endblock %}
   </head>
@@ -29,7 +31,7 @@
 
         {% block site_js %}
           {% compress js %}
-          <script src="{{ static('mainsite/js/libs/jquery-1.4.4.min.js') }}"></script>
+          <script src="{{ static('mainsite/js/libs/jquery.min.js') }}"></script>
           <script src="{{ static('mainsite/js/libs/jquery.cookie.js') }}"></script>
           <script src="{{ static('mainsite/js/init.js') }}"></script>
           {% endcompress %}
